@@ -12,16 +12,17 @@ class PollingTabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+		passVoteControllerToChildViewControllers()
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
+	func passVoteControllerToChildViewControllers() {
+		for childVC in childViewControllers {
+			if let childVC = childVC as? VoteControllerProtocol {
+				childVC.voteController = voteController
+			}
+		}
+	}
     /*
     // MARK: - Navigation
 
@@ -32,4 +33,6 @@ class PollingTabBarViewController: UITabBarController {
     }
     */
 
+	let voteController = VoteController()
+	
 }

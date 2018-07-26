@@ -8,7 +8,9 @@
 
 import UIKit
 
-class CombinedViewController: UIViewController {
+class CombinedViewController: UIViewController, VoteControllerProtocol {
+	var voteController: VoteController?
+	
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,12 +18,18 @@ class CombinedViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "EmbedVotingController" {
+			if let tableVC = segue.destination as? VoteControllerProtocol {
+				voteController = tableVC.voteController
+			}
+		} else if segue.identifier == "EmbedVotingController" {
+			if let tableVC = segue.destination as? VoteControllerProtocol {
+				voteController = tableVC.voteController
+			}
+		} else { return }
+	}
+	
     /*
     // MARK: - Navigation
 

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="OTv-h8-HMu">
             <objects>
                 <viewController id="qq5-Ir-eWP" sceneMemberID="viewController">
@@ -36,6 +36,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="KGK-Hn-T0R"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="gvf-N1-5ow"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vnk-Xj-RXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
